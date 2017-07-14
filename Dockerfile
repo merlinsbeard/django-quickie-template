@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8000
 ENV DJANGO_SETTINGS_MODULE config.settings.prod
 RUN ["chmod", "+x", "/dj_project_name/entrypoint.sh"]
-ENTRYPOINT ["sh", "/dj_project_name"]
+ENTRYPOINT ["sh", "/dj_project_name/entrypoint.sh"]

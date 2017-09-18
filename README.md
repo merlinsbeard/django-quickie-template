@@ -9,6 +9,8 @@ Clone repo
 
 ```bash
 $ cd dj_quickie
+$ # Run python script to change project name
+$ python templator
 $ docker build -t <docker image name> .
 $ docker run --name <project_name> -d <dockerimage>:latest
 ```

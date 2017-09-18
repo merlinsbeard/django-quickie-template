@@ -1,0 +1,10 @@
+FROM python:3.6.1-onbuild
+
+ADD ./{{ project_name }} /{{ project_name }}
+COPY ./entrypoint.sh /{{ project_name }}/
+WORKDIR /{{ project_name }}
+RUN pip install --no-cache-dir -r requirements.txt
+EXPOSE 8000
+ENV DJANGO_SETTINGS_MODULE config.settings.prod
+RUN ["chmod", "+x", "/{{ project_name }}/entrypoint.sh"]
+ENTRYPOINT ["sh", "/{{ project_name }}/entrypoint.sh"]
